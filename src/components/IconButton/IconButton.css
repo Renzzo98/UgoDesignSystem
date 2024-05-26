@@ -1,0 +1,11 @@
+.image-hover-effect {
+    height: 36px;
+    width: 36px;
+    fill: white;
+    transition: transform 0.5s ease;
+    transform: scale(1); /* Default state */
+}
+  
+.image-hover-effect:hover {
+    transform: scale(1.5); /* Zoom in on hover */
+}

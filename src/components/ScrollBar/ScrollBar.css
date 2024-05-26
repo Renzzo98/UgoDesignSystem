@@ -1,0 +1,21 @@
+.bar-title {
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-style: normal; 
+}
+
+.bar-graph {
+    width: 100%;
+    background-color: #eee;
+}
+  
+.bar {
+    width: 0%;
+    background-color: var(--modern-primary-color);
+    height: 20px;
+    width: 0%; /* Start width */
+    text-align: right;
+    padding-right: 5px;
+    color: white;
+}
