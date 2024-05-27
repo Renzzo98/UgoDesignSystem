@@ -1,24 +1,26 @@
 import "./IconButton.css";
 
 import { FC } from "react";
-// import { useGlobalState } from '../../GlobalStateProvider';
 import { motion } from "framer-motion";
 
 interface IconButtonButtonProps {
-  id: number;
   link: string;
+  textOnDarkBG?: boolean;
   iconPath: string;
-  activeIcon?: string;
+  iconSize?: number;
+  sideText?: string;
   scrollFunction?: () => void;
 }
 
 const IconButton: FC<IconButtonButtonProps> = ({
-  id,
   link,
+  textOnDarkBG,
   iconPath,
-  activeIcon,
+  iconSize,
+  sideText,
   scrollFunction,
 }) => {
+
   //const { activePage, setActivePage } = useGlobalState();
 
   function setPageID(pageID: number, scrollFunc: () => void): void {
@@ -27,75 +29,41 @@ const IconButton: FC<IconButtonButtonProps> = ({
     // console.log('Current Page is ' + activePage);
   }
 
+  function openLink(link: string) {
+    window.open(link, "_blank");
+  }
+
   return (
     <div>
-      {link === "" && scrollFunction ? (
-        0 === id ? (
-          <motion.div
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
+      <motion.div
+        animate={{
+            scale: [1, 2, 2, 1.5, 1],
+            rotate: [0, 360],
+            borderRadius: ["0%", "50%", "0%"]
+        }}
+        transition={{
+            duration: 2,
+            ease: "backOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            repeatDelay: 1
+        }}
+      >
+        <div className="icon-button-container hover-effect" style={{
+          gap: sideText ? '15px' : ''
+        }}>
+          <p style={{ color: textOnDarkBG ? 'white' : 'black' }}>{sideText}</p>
+          <img
+            onClick={() => link? openLink(link) : {}}
+            src={iconPath}
+            style={{
+              height: `${iconSize}rem`,
+              width: `${iconSize}rem`
             }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeatDelay: 1,
-            }}
-          >
-            <img
-              onClick={() => setPageID(id, scrollFunction)}
-              src={activeIcon}
-              alt="Social Media Path"
-              className="image-hover-effect"
-            />
-          </motion.div>
-        ) : (
-          <motion.div
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeatDelay: 1,
-            }}
-          >
-            <img
-              onClick={() => setPageID(id, scrollFunction)}
-              src={iconPath}
-              alt="Social Media Path"
-              className="image-hover-effect"
-            />
-          </motion.div>
-        )
-      ) : (
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <motion.div
-            animate={{
-              scale: [1, 2, 2, 1.5, 1],
-              rotate: [0, 360],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-            }}
-            transition={{
-              duration: 2,
-              ease: "backOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeatDelay: 1,
-            }}
-          >
-            <img
-              src={iconPath}
-              alt="Social Media Path"
-              className="image-hover-effect"
-            />
-          </motion.div>
-        </a>
-      )}
+            alt="Social Media Path"
+            className="icon"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 };

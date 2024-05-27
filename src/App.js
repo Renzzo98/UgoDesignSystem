@@ -1,24 +1,38 @@
-import logo from "./logo.svg";
 import "./App.css";
 
+import { useEffect, useState } from 'react';
+import { GlobalStateProvider } from "./GlobalStateProvider";
+import { useMediaQuery } from 'react-responsive';
+import PageContainer from "./views/PageContainer/PageContainer";
+
 function App() {
+
+  const MobileView = useMediaQuery({ maxWidth: 1253 });
+
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    // Update height when the window is resized
+    const handleResize = () => {
+      setHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalStateProvider>
+      <div className="body" style={{
+        minHeight: height
+      }}>
+        <PageContainer isMobile={MobileView} />
+      </div>
+    </GlobalStateProvider>
   );
 }
 

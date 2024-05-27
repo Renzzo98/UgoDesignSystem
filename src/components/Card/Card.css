@@ -1,0 +1,40 @@
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    width: max-content;
+    margin-top: 1rem;
+    padding: 3rem;
+    padding-left: 1.5rem;
+    border: 2px solid rgb(255 255 255);
+    border-radius: 2rem;
+    z-index: 2;
+}
+
+.cardTextContent {}
+
+.cardTitle {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    margin: 18px 0px;
+}
+
+.cardTitle.dark {
+    color: white;
+}
+
+.cardSubTitle {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    margin: 12px 3px;
+}
+
+.cardSubTitle.dark {
+    color: white;
+}

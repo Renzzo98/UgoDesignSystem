@@ -1,0 +1,6 @@
+.component-page-container {
+    text-align: left;
+    padding: 6rem 8rem;
+    display: flex;
+    flex-direction: column;
+}
