@@ -34,36 +34,20 @@ const IconButton: FC<IconButtonButtonProps> = ({
   }
 
   return (
-    <div>
-      <motion.div
-        animate={{
-            scale: [1, 2, 2, 1.5, 1],
-            rotate: [0, 360],
-            borderRadius: ["0%", "50%", "0%"]
+    <div className="icon-button-container hover-effect" style={{
+      gap: sideText ? '15px' : ''
+    }}>
+      <p style={{ color: textOnDarkBG ? 'white' : 'black' }}>{sideText}</p>
+      <img
+        onClick={() => link? openLink(link) : {}}
+        src={iconPath}
+        style={{
+          height: `${iconSize}rem`,
+          width: `${iconSize}rem`
         }}
-        transition={{
-            duration: 2,
-            ease: "backOut",
-            times: [0, 0.2, 0.5, 0.8, 1],
-            repeatDelay: 1
-        }}
-      >
-        <div className="icon-button-container hover-effect" style={{
-          gap: sideText ? '15px' : ''
-        }}>
-          <p style={{ color: textOnDarkBG ? 'white' : 'black' }}>{sideText}</p>
-          <img
-            onClick={() => link? openLink(link) : {}}
-            src={iconPath}
-            style={{
-              height: `${iconSize}rem`,
-              width: `${iconSize}rem`
-            }}
-            alt="Social Media Path"
-            className="icon"
-          />
-        </div>
-      </motion.div>
+        alt="Social Media Path"
+        className="icon"
+      />
     </div>
   );
 };

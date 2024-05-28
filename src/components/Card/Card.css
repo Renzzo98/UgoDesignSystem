@@ -5,19 +5,21 @@
     align-items: start;
     width: max-content;
     margin-top: 1rem;
-    padding: 3rem;
-    padding-left: 1.5rem;
-    border: 2px solid rgb(255 255 255);
+    padding: 2rem 3rem 2rem 1.5rem;
+    border: 0.2rem solid rgb(255 255 255);
     border-radius: 2rem;
     z-index: 2;
 }
 
-.cardTextContent {}
+.cardTextContent {
+    max-width: 200px; /* Set the maximum width */
+    word-wrap: break-word; /* Wrap words when they exceed the max-width */
+    white-space: normal; 
+}
 
 .cardTitle {
     color: var(--primary-color);
-    font-size: 28px;
-    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
     font-optical-sizing: auto;
     font-weight: 700;
     margin: 18px 0px;
@@ -28,11 +30,9 @@
 }
 
 .cardSubTitle {
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
     font-optical-sizing: auto;
     font-weight: 500;
-    margin: 12px 3px;
 }
 
 .cardSubTitle.dark {

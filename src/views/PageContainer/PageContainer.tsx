@@ -2,6 +2,7 @@ import "./PageContainer.css";
 
 import { FC } from "react";
 import { useGlobalState } from "../../GlobalStateProvider";
+import { navigationBar } from '../../constants/textContent';
 import TopBarNavigation from "../../components/TopBarNavigation/topBarNavigation";
 import ComponentPage from "../componentContent/componentContent";
 import HomePage from "../homeContent/homeContent";
@@ -42,7 +43,7 @@ const PageContainer: FC<PageContainerProps> = ({ isMobile }) => {
 
   return (
     <div>
-      <TopBarNavigation isMobile={isMobile} darkBG={true} scrollFuncList={scrollFunctions}/>
+      <TopBarNavigation title={navigationBar.title} navItems={navigationBar.navList} footer={navigationBar.footer} isMobile={isMobile} styleOnScroll={false} darkBG={true} scrollFuncList={scrollFunctions}/>
       <PageHandler mobileView={isMobile}/>
     </div>
   );

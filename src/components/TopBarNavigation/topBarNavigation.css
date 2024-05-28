@@ -45,6 +45,7 @@
 }
 
 .nav-item {
+    cursor: pointer;
     color: black
 }
 
@@ -67,6 +68,7 @@
 }
   
 .menu-icon {
+    cursor: pointer;
     font-size: 30px;
     position: absolute;
     left: 50%;

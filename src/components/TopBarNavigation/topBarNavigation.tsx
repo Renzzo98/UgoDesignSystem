@@ -9,12 +9,16 @@ import arrowWhite from '../../assets/icons/Arrow_Icon_White.png';
 
 
 interface topBarNavigationProps {
+    title: string;
+    navItems: string[];
+    footer: string;
     isMobile: boolean;
+    styleOnScroll: boolean;
     scrollFuncList: (() => void)[];
     darkBG: boolean;
 }
 
-const TopBarNavigation: FC<topBarNavigationProps> = ({ isMobile, scrollFuncList, darkBG })  => {
+const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, isMobile, styleOnScroll, scrollFuncList, darkBG })  => {
 
     const { activePage, setActivePage } = useGlobalState();
 
@@ -81,10 +85,10 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ isMobile, scrollFuncList,
     
     const stackedTopBar = () => {
         return (
-            <div className={`topBarNav ${scrolled ? 'scrolled' : ''}`}>
-                <h2 className='nav-item' style={{ color: `${darkBG ? 'white' : 'black'}`}}>{navigationBar.title}</h2>
+            <div className={`topBarNav ${styleOnScroll ? scrolled ? 'scrolled' : '': ''}`}>
+                <h2 className='nav-item' style={{ color: `${darkBG ? 'white' : 'black'}`}}>{title}</h2>
                 <div className="navbar">
-                    <div className={`menu-button ${scrolled ? 'scrolled' : ''}`} onClick={toggleMenu}>
+                    <div className={`menu-button ${styleOnScroll ? scrolled ? 'scrolled' : '': ''}`} onClick={toggleMenu}>
                         <span className={`menu-icon ${isMenuOpen ? 'hide' : 'show'}`} style={{ color: `${darkBG ? 'white' : 'black'}`}}>☰</span>
                         <span className={`menu-icon ${isMenuOpen ? 'show' : 'hide'}`} style={{ color: `${darkBG ? 'white' : 'black'}`}}>✕</span>
                     </div>
@@ -92,18 +96,13 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ isMobile, scrollFuncList,
                 {isMenuRendered && (
                     <div className={`top-nav-menu-container ${isMenuOpen ? 'show' : 'hide'}`}>
                         <ul className={`menu-list ${scrolled ? 'scrolled' : ''}`}>
-                            {navigationBar.navList.map((item, index) => {
+                            {navItems.map((item, index) => {
                                 return (
                                     <div key={index}>
                                         <li className='menu-item' style={{ color: `${darkBG ? 'white' : 'black'}`}} onClick={() => handlePage(index)}>{item}</li>
                                     </div>
                                 )
                             })}
-                            {/* <a className={`resume-bar ${scrolled ? 'scrolled' : ''}`} href={`${process.env.PUBLIC_URL}/${fileName}`} download="HugoRenzzoResume.pdf">
-                                <img className='resume-download-icon' src={scrolled? 'orangeDownloadIcon' : 'DownloadIcon'} alt="Download resume" />
-                                <p className='resume-text'>DOWNLOAD RESUME</p>
-                            </a> */}
-    
                         </ul>
                     </div>
                 )}
@@ -112,28 +111,28 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ isMobile, scrollFuncList,
     }
 
 
-    const listTopBar = () => {
+    const unstackedTopBar = () => {
         return (
             <div className={`topBarListNav ${scrolled ? 'scrolled' : ''}`}>
                 <div className='nav-title-container'>
-                    <h2 className='nav-item' style={{ color: `${darkBG ? 'white' : 'black'}`}}>{navigationBar.title}</h2>
+                    <h2 className='nav-item' style={{ color: `${darkBG ? 'white' : 'black'}`}}>{title}</h2>
                 </div>
                 <div className='nav-item-container'>
-                    {navigationBar.navList.map((item, index) => {
+                    {navItems.map((item, index) => {
                         return (
                             <span key={index} className='nav-item' style={{ color: `${darkBG ? 'white' : 'black'}`, fontWeight: `${activePage === index ? '600': '200' }`}} onClick={() => handlePage(index)}>{item}</span>
                         )
                     })}
                 </div>
                 <div className='nav-footer-container'>
-                    <IconButton sideText={navigationBar.footer} textOnDarkBG={true} iconPath={arrowWhite} iconSize={1} link='' />
+                    <IconButton sideText={footer} textOnDarkBG={true} iconPath={arrowWhite} iconSize={1} link='' />
                 </div>
             </div>
         )
     }
 
     return (
-        isMobile ? stackedTopBar() : listTopBar()
+        isMobile ? stackedTopBar() : unstackedTopBar()
     )
 
 }

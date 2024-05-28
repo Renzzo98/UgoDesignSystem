@@ -28,7 +28,7 @@ function App() {
   return (
     <GlobalStateProvider>
       <div className="body" style={{
-        minHeight: height
+        minHeight: height + 300
       }}>
         <PageContainer isMobile={MobileView} />
       </div>
