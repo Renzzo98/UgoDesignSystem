@@ -1,0 +1,21 @@
+.hover-effect {
+    cursor: pointer;
+    fill: white;
+    transition: transform 0.5s ease;
+    transform: scale(1); /* Default state */
+}
+  
+.hover-effect:hover {
+    transform: scale(1.5); /* Zoom in on hover */
+}
+
+.icon {
+    height: 36px;
+    width: 36px;
+}
+
+.icon-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

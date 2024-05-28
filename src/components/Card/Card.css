@@ -1,0 +1,40 @@
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    width: max-content;
+    margin-top: 1rem;
+    padding: 2rem 3rem 2rem 1.5rem;
+    border: 0.2rem solid rgb(255 255 255);
+    border-radius: 2rem;
+    z-index: 2;
+}
+
+.cardTextContent {
+    max-width: 200px; /* Set the maximum width */
+    word-wrap: break-word; /* Wrap words when they exceed the max-width */
+    white-space: normal; 
+}
+
+.cardTitle {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    margin: 18px 0px;
+}
+
+.cardTitle.dark {
+    color: white;
+}
+
+.cardSubTitle {
+    font-size: 0.8rem;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+.cardSubTitle.dark {
+    color: white;
+}
