@@ -3,9 +3,10 @@ import "./PageContainer.css";
 import { FC } from "react";
 import { useGlobalState } from "../../GlobalStateProvider";
 import { navigationBar } from '../../constants/textContent';
+
 import TopBarNavigation from "../../components/TopBarNavigation/topBarNavigation";
-import ComponentPage from "../componentContent/componentContent";
-import HomePage from "../homeContent/homeContent";
+import ComponentPage from "../ComponentContent/ComponentContent";
+import HomeContent from "../HomeContent/HomeContent";
 
 interface PageContainerProps {
   isMobile: boolean
@@ -27,7 +28,7 @@ const PageContainer: FC<PageContainerProps> = ({ isMobile }) => {
         )
       default:
         return (
-          <HomePage isMobile={mobileView} />
+          <HomeContent isMobile={mobileView} />
         )
     }
 };

@@ -10,13 +10,13 @@
 }
 
 .sub-header {
-    color: white;
+    color: var(--secondary-color);
     font-size: 1.1rem;
     font-weight: 200;
 }
 
 .main-header {
-    color: white;
+    color: var(--secondary-color);
     font-size: 3rem;
     text-transform: capitalize;
 }
@@ -28,14 +28,9 @@
     align-items: center;
     gap: 2rem;
 
-    .button-container {
-        background-color: rgba(71, 71, 71, 0.458);
-        border-radius: 100rem;
-    }
-
     p { 
-        color: white;
-        
+        color: var(--secondary-color);
+        text-transform: capitalize;
     }
 }
 

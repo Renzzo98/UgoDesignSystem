@@ -1,14 +1,12 @@
-import "./componentContent.css";
+import "./ComponentContent.css";
 
 import { FC } from 'react';
-import { motion } from "framer-motion";
-import ScrollBar from "../../components/ScrollBar/ScrollBar";
-import IconButton from "../../components/IconButton/IconButton";
 import Section from "../../components/Section/Section";
-import Card from "../../components/Card/Card";
 import TopBarNavigation from "../../components/TopBarNavigation/topBarNavigation";
-
-import mouseIcon from "../../assets/icons/Mouse_Icon_White.png";
+import CardDemo from "../../demos/CardDemo/CardDemo";
+import CounterDemo from "../../demos/CounterDemo/CounterDemo";
+import IconButtonDemo from "../../demos/IconButtonDemo/IconButtonDemo";
+import ButtonDemo from "../../demos/ButtonDemo/ButtonDemo";
 
 
 interface ComponentContentProps {
@@ -30,7 +28,7 @@ const ComponentContent: FC<ComponentContentProps> = ({ isMobile }) => {
         <div className="component-page-container">
             <Section header="Card" darkBackground={true} 
                 childComponent={
-                    <Card iconPath={mouseIcon} title="Test" subTitle="This is an testing to try out the card compomonent. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah." iconSize={6} darkBackground={true}/>
+                    <CardDemo isMobile={isMobile}/>
                 } 
             />
             <Section header="Top Bar Navigation" darkBackground={true} 
@@ -40,24 +38,21 @@ const ComponentContent: FC<ComponentContentProps> = ({ isMobile }) => {
                     </div>
                 } 
             />
-            <Section header="Icon Button" darkBackground={true} childComponent={
-                <motion.div
-                    animate={{
-                        scale: [1, 2, 2, 1.5, 1],
-                        rotate: [0, 360],
-                        borderRadius: ["0%", "50%", "0%"]
-                    }}
-                    transition={{
-                        duration: 2,
-                        ease: "backOut",
-                        times: [0, 0.2, 0.5, 0.8, 1],
-                        repeatDelay: 1
-                    }}
-                >
+            <Section header="CounterBox" darkBackground={true} 
+                childComponent={
                     <div>
-                        <IconButton iconPath={mouseIcon} link="" iconSize={10}/>
+                        <CounterDemo isMobile={isMobile} />
                     </div>
-                </motion.div>} 
+                } 
+            />
+            <Section header="Icon Button" darkBackground={true} childComponent={
+                    <IconButtonDemo isMobile={isMobile} />
+                } 
+            />
+            <Section header="Button" darkBackground={true} 
+                childComponent={
+                    <ButtonDemo isMobile={isMobile} />
+                } 
             />
         </div>
     )

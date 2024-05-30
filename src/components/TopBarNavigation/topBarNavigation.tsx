@@ -6,6 +6,7 @@ import { useGlobalState } from '../../GlobalStateProvider';
 import IconButton from '../IconButton/IconButton';
 
 import arrowWhite from '../../assets/icons/Arrow_Icon_White.png';
+import { StyleTypes } from '../../constants/styleTypes';
 
 
 interface topBarNavigationProps {
@@ -125,7 +126,7 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, 
                     })}
                 </div>
                 <div className='nav-footer-container'>
-                    <IconButton sideText={footer} textOnDarkBG={true} iconPath={arrowWhite} iconSize={1} link='' />
+                    <IconButton type={StyleTypes.Tertiary} sideText={footer} iconPath={arrowWhite} iconSize={1} link='' />
                 </div>
             </div>
         )
