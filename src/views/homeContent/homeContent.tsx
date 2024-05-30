@@ -1,4 +1,4 @@
-import "./homeContent.css";
+import "./HomeContent.css";
 
 import { FC } from "react";
 import { explorePage } from "../../constants";
@@ -6,6 +6,7 @@ import IconButton from "../../components/IconButton/IconButton";
 
 import mouseWhiteSolid from "../../assets/icons/Mouse_Icon_White_Solid.png";
 import { motion } from 'framer-motion';
+import { StyleTypes } from "../../constants/styleTypes";
 
 interface HomeContentProps {
     isMobile: boolean;
@@ -29,22 +30,27 @@ const HomeContent: FC<HomeContentProps> = ({ isMobile }) => {
                 justifyContent: `${isMobile? 'center': 'flex-start'}`
             }}>
                 <div className="scroll-action-container">
-                    <div className="button-container">
+                    <div>
                         <motion.div
-                            animate={{
-                                scale: [1, 2, 2, 1.5, 1],
-                                rotate: [0, 360],
-                                borderRadius: ["0%", "50%", "0%"]
-                            }}
+                            initial={{ opacity: 0 }}
+                            whileInView="animate"
                             transition={{
                                 duration: 2,
                                 ease: "backOut",
                                 times: [0, 0.2, 0.5, 0.8, 1],
                                 repeatDelay: 1
                             }}
+                            variants={{
+                                animate: {
+                                    opacity: 1,
+                                    scale: [1, 2, 2, 1.5, 1],
+                                    rotate: [0, 360, 0],
+                                    borderRadius: ["0%", "50%", "0%"]
+                                }
+                            }}
                         >
                             <div>
-                                <IconButton link="" iconPath={mouseWhiteSolid} iconSize={3} />
+                                <IconButton type={StyleTypes.Primary} link="" iconPath={mouseWhiteSolid} iconSize={3} />
                             </div>
                         </motion.div>
                     </div>

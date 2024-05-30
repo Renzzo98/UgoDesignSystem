@@ -1,6 +1,6 @@
 .hover-effect {
     cursor: pointer;
-    fill: white;
+    fill: var(--secondary-color);
     transition: transform 0.5s ease;
     transform: scale(1); /* Default state */
 }
@@ -9,13 +9,24 @@
     transform: scale(1.5); /* Zoom in on hover */
 }
 
-.icon {
-    height: 36px;
-    width: 36px;
-}
-
 .icon-button-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.icon {
+    height: 36px;
+    width: 36px;
+    border-radius: 20rem;
+}
+
+.primary-icon {
+    background-color: rgba(71, 71, 71, 0.458);
+    border: 1px solid rgba(71, 71, 71, 0.458)
+}
+
+.secondary-icon {
+    background-color: rgba(185, 185, 185, 0.458);
+    border: 1px solid rgba(185, 185, 185, 0.458);
 }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: var(--primary-color);
 }
 
 .section-header {
@@ -18,7 +18,7 @@
 }
 
 .section-header.dark {
-  color: white;
+  color: var(--secondary-color);
 }
 
 .section-desc {
@@ -32,7 +32,7 @@
 }
 
 .section-desc.dark {
-  color: white;
+  color: var(--secondary-color);
 }
 
 .section-divider {
@@ -43,5 +43,5 @@
 }
 
 .section-divider.dark {
-  background-color: white;
+  background-color: var(--secondary-color);
 }

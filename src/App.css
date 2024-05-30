@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #151515;
+  --secondary-color: #c5c5c5;
+  --tertiary-color: transparent;
+}
+
 .body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #2C003E, #000000, #1C1C3C);

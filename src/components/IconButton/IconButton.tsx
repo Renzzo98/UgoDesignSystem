@@ -1,11 +1,11 @@
 import "./IconButton.css";
 
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { StyleTypes } from "../../constants/styleTypes";
 
 interface IconButtonButtonProps {
   link: string;
-  textOnDarkBG?: boolean;
+  type: StyleTypes;
   iconPath: string;
   iconSize?: number;
   sideText?: string;
@@ -14,7 +14,7 @@ interface IconButtonButtonProps {
 
 const IconButton: FC<IconButtonButtonProps> = ({
   link,
-  textOnDarkBG,
+  type,
   iconPath,
   iconSize,
   sideText,
@@ -33,21 +33,59 @@ const IconButton: FC<IconButtonButtonProps> = ({
     window.open(link, "_blank");
   }
 
+  const renderButtonType = () => {
+    switch (type) {
+      case StyleTypes.Primary:
+        return (
+          <div className="icon-button-container hover-effect">
+            <img
+              onClick={() => link? openLink(link) : {}}
+              src={iconPath}
+              style={{
+                height: `${iconSize}rem`,
+                width: `${iconSize}rem`
+              }}
+              alt="Social Media Path"
+              className="icon primary-icon"
+            />
+          </div>
+        );
+      case StyleTypes.Secondary:
+        return (
+          <div className="icon-button-container hover-effect">
+            <img
+              onClick={() => link? openLink(link) : {}}
+              src={iconPath}
+              style={{
+                height: `${iconSize}rem`,
+                width: `${iconSize}rem`
+              }}
+              alt="Social Media Path"
+              className="icon secondary-icon"
+            />
+          </div>
+        );
+      default:
+        return (
+          <div className="icon-button-container hover-effect">
+            <img
+              onClick={() => link? openLink(link) : {}}
+              src={iconPath}
+              style={{
+                height: `${iconSize}rem`,
+                width: `${iconSize}rem`
+              }}
+              alt="Social Media Path"
+              className="icon"
+            />
+          </div>
+        );
+    }
+  };
+
   return (
-    <div className="icon-button-container hover-effect" style={{
-      gap: sideText ? '15px' : ''
-    }}>
-      <p style={{ color: textOnDarkBG ? 'white' : 'black' }}>{sideText}</p>
-      <img
-        onClick={() => link? openLink(link) : {}}
-        src={iconPath}
-        style={{
-          height: `${iconSize}rem`,
-          width: `${iconSize}rem`
-        }}
-        alt="Social Media Path"
-        className="icon"
-      />
+    <div>
+      {renderButtonType()}
     </div>
   );
 };

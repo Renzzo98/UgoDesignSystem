@@ -1,4 +1,4 @@
-.CardContainer {
+.cardContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -6,35 +6,51 @@
     width: max-content;
     margin-top: 1rem;
     padding: 2rem 3rem 2rem 1.5rem;
-    border: 0.2rem solid rgb(255 255 255);
     border-radius: 2rem;
     z-index: 2;
+    
+    .cardTextContent {
+        max-width: 200px; /* Set the maximum width */
+        word-wrap: break-word; /* Wrap words when they exceed the max-width */
+        white-space: normal; 
+    }
+    
+    .cardTitle {
+        font-size: 1.8rem;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        margin: 18px 0px;
+    }
+    
+    .cardSubTitle {
+        font-size: 0.8rem;
+        font-optical-sizing: auto;
+        font-weight: 500;
+    }
+    
+    .primaryText {
+        color: var(--secondary-color);;
+    }
+    
+    .secondaryText {
+        color: var(--primary-color);;
+    }
+    
+    .tertiaryText {
+        color: var(--secondary-color);;
+    }
+
+}    
+
+
+.primaryCard {
+    background-color: var(--primary-color);;
 }
 
-.cardTextContent {
-    max-width: 200px; /* Set the maximum width */
-    word-wrap: break-word; /* Wrap words when they exceed the max-width */
-    white-space: normal; 
+.secondaryCard {
+    background-color: var(--secondary-color);
 }
 
-.cardTitle {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    margin: 18px 0px;
-}
-
-.cardTitle.dark {
-    color: white;
-}
-
-.cardSubTitle {
-    font-size: 0.8rem;
-    font-optical-sizing: auto;
-    font-weight: 500;
-}
-
-.cardSubTitle.dark {
-    color: white;
+.tertiaryCard {
+    border: 0.2rem solid var(--secondary-color);
 }
