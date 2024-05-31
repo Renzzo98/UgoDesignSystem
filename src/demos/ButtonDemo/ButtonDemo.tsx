@@ -19,6 +19,7 @@ const ButtonDemo: FC<ButtonDemoProps> = () => {
                 <motion.div
                         initial={{ opacity: 1 }}
                         whileInView="animate"
+                        viewport={{ once: true }}
                         transition ={{
                             type: "spring",
                             bounce: 0.5,
@@ -44,6 +45,7 @@ const ButtonDemo: FC<ButtonDemoProps> = () => {
             <motion.div
                         initial={{ opacity: 1 }}
                         whileInView="animate"
+                        viewport={{ once: true }}
                         transition ={{
                             type: "spring",
                             bounce: 0.5,
@@ -69,6 +71,7 @@ const ButtonDemo: FC<ButtonDemoProps> = () => {
             <motion.div
                         initial={{ opacity: 1 }}
                         whileInView="animate"
+                        viewport={{ once: true }}
                         transition ={{
                             type: "spring",
                             bounce: 0.5,

@@ -21,8 +21,8 @@ const IconButtonDemo: FC<IconButtonDemoProps> = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView="animate"
+                    viewport={{ once: true }}
                     transition ={{
-                        delay: 1,
                         duration: 2,
                         ease: "backOut",
                         times: [0, 0.2, 0.5, 0.8, 1],
@@ -47,8 +47,8 @@ const IconButtonDemo: FC<IconButtonDemoProps> = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView="animate"
+                    viewport={{ once: true }}
                     transition ={{
-                        delay: 1,
                         duration: 2,
                         ease: "backOut",
                         times: [0, 0.2, 0.5, 0.8, 1],
@@ -73,8 +73,8 @@ const IconButtonDemo: FC<IconButtonDemoProps> = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView="animate"
+                    viewport={{ once: true }}
                     transition ={{
-                        delay: 1,
                         duration: 2,
                         ease: "backOut",
                         times: [0, 0.2, 0.5, 0.8, 1],

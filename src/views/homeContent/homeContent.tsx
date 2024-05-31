@@ -21,6 +21,7 @@ const HomeContent: FC<HomeContentProps> = () => {
             <motion.div
                 initial={{ opacity: 0, x: -200  }}
                 whileInView="animate"
+                viewport={{ once: true }}
                 variants={{
                     animate: {
                         opacity: 1, 
@@ -42,6 +43,7 @@ const HomeContent: FC<HomeContentProps> = () => {
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView="animate"
+                            viewport={{ once: true }}
                             transition={{
                                 duration: 2,
                                 ease: "backOut",
