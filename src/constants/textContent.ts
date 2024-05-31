@@ -9,7 +9,7 @@ export const navigationBar = {
 
 export const explorePage = {
     header: "Created By A Single Developer From NY. Wanted To Create Something Clean And Simple.",
-    subHeader: "Welcome to my Design System! - TDV",
+    subHeader: "Welcome to my Design System! - fdf",
     
 }
 

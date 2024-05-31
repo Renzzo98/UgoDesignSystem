@@ -28,7 +28,7 @@ const HomeContent: FC<HomeContentProps> = () => {
         <div className={`home-page-container ${isMobile ? 'mobile-view' : ''}`}>
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
-                initial={{ opacity: 0, x: -200  }}
+                initial={ !isMobile ? { opacity: 0, x: -200  } : { opacity: 1 }}
                 animate={ !isMobile ?
                     {
                         opacity: 1, 
