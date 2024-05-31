@@ -1,8 +1,8 @@
 import "./HomeContent.css";
 
-import { FC } from "react";
+import { FC, useRef, useEffect } from "react";
 import { explorePage } from "../../constants";
-import { motion } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import { StyleTypes } from "../../constants/styleTypes";
 import { useGlobalState } from "../../GlobalStateProvider";
 import IconButton from "../../components/IconButton/IconButton";
@@ -13,14 +13,21 @@ interface HomeContentProps {}
 
 const HomeContent: FC<HomeContentProps> = () => {
 
+    const controls = useAnimation();
+    const ref = useRef(null)
+    const isInView = useInView(ref);
+
     const { isMobile } = useGlobalState();
+
+    useEffect(() => {
+        controls.start("animate");
+    }, [isInView, controls]);
 
     return (
         <div className={`home-page-container ${isMobile ? 'mobile-view' : ''}`}>
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
                 initial={{ opacity: 0, x: -200  }}
-                whileInView="animate"
                 viewport={{ once: true }}
                 variants={{
                     animate: {
@@ -28,7 +35,7 @@ const HomeContent: FC<HomeContentProps> = () => {
                         x: 0
                     }
                 }}
-                animate={{ opacity: 1, x: 0 }}
+                animate={controls}
                 transition={{ ease: "easeOut", duration: 1 }}
                 >
                     <div>
