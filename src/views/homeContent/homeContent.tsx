@@ -1,8 +1,8 @@
 import "./HomeContent.css";
 
-import { FC, useRef, useEffect } from "react";
+import { FC, useState } from "react";
 import { explorePage } from "../../constants";
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { StyleTypes } from "../../constants/styleTypes";
 import { useGlobalState } from "../../GlobalStateProvider";
 import IconButton from "../../components/IconButton/IconButton";
@@ -13,29 +13,29 @@ interface HomeContentProps {}
 
 const HomeContent: FC<HomeContentProps> = () => {
 
-    const controls = useAnimation();
-    const ref = useRef(null)
-    const isInView = useInView(ref);
-
     const { isMobile } = useGlobalState();
+    const [hasAnimated, setHasAnimated] = useState(false);
 
-    useEffect(() => {
-        controls.start("animate");
-    }, [isInView, controls]);
+    // Function to handle the animation
+    const handleAnimation = () => {
+        if (!hasAnimated) {
+            setHasAnimated(true);
+        }
+    };
+
 
     return (
         <div className={`home-page-container ${isMobile ? 'mobile-view' : ''}`}>
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
                 initial={{ opacity: 0, x: -200  }}
-                viewport={{ once: true }}
-                variants={{
-                    animate: {
+                animate={ hasAnimated ?
+                    {
                         opacity: 1, 
                         x: 0
-                    }
-                }}
-                animate={controls}
+                    } : {}
+                }
+                onViewportEnter={handleAnimation}
                 transition={{ ease: "easeOut", duration: 1 }}
                 >
                     <div>
@@ -50,7 +50,6 @@ const HomeContent: FC<HomeContentProps> = () => {
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView="animate"
-                            viewport={{ once: true }}
                             transition={{
                                 duration: 2,
                                 ease: "backOut",
