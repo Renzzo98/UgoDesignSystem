@@ -65,6 +65,7 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, 
 
     const handlePage = (newPageID: number) => {
         setActivePage(newPageID);
+        toggleMenu();
         console.log('New Page is ' + activePage);
     };
     
