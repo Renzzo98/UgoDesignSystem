@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/UgoDesignSystem/static/css/main.63a09c6b.css",
-    "main.js": "/UgoDesignSystem/static/js/main.26af7eef.js",
+    "main.css": "/UgoDesignSystem/static/css/main.a1b7a1cf.css",
+    "main.js": "/UgoDesignSystem/static/js/main.602317dc.js",
     "static/js/453.f1905d5e.chunk.js": "/UgoDesignSystem/static/js/453.f1905d5e.chunk.js",
     "index.html": "/UgoDesignSystem/index.html",
-    "main.63a09c6b.css.map": "/UgoDesignSystem/static/css/main.63a09c6b.css.map",
-    "main.26af7eef.js.map": "/UgoDesignSystem/static/js/main.26af7eef.js.map",
+    "main.a1b7a1cf.css.map": "/UgoDesignSystem/static/css/main.a1b7a1cf.css.map",
+    "main.602317dc.js.map": "/UgoDesignSystem/static/js/main.602317dc.js.map",
     "453.f1905d5e.chunk.js.map": "/UgoDesignSystem/static/js/453.f1905d5e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63a09c6b.css",
-    "static/js/main.26af7eef.js"
+    "static/css/main.a1b7a1cf.css",
+    "static/js/main.602317dc.js"
   ]
 }
