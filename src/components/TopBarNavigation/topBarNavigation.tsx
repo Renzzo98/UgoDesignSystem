@@ -6,7 +6,6 @@ import IconButton from '../IconButton/IconButton';
 
 import arrowWhite from '../../assets/icons/Arrow_Icon_White.png';
 import { StyleTypes } from '../../constants/styleTypes';
-import { number } from 'prop-types';
 
 
 interface topBarNavigationProps {

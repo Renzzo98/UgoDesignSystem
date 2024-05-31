@@ -1,6 +1,6 @@
 import "./HomeContent.css";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { explorePage } from "../../constants";
 import { motion } from 'framer-motion';
 import { StyleTypes } from "../../constants/styleTypes";
@@ -14,29 +14,20 @@ interface HomeContentProps {}
 const HomeContent: FC<HomeContentProps> = () => {
 
     const { isMobile } = useGlobalState();
-    const [hasAnimated, setHasAnimated] = useState(false);
-
-    // Function to handle the animation
-    const handleAnimation = () => {
-        if (!hasAnimated) {
-            console.log('animation started');
-            setHasAnimated(true);
-        }
-    };
-
 
     return (
         <div className={`home-page-container ${isMobile ? 'mobile-view' : ''}`}>
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
-                initial={ !isMobile ? { opacity: 0, x: -200  } : { opacity: 1 }}
-                animate={ !isMobile ?
-                    {
+                initial={isMobile ? { opacity: 1 } : { opacity: 0, x: -200  }}
+                whileInView={isMobile ? {} : "animate"}
+                viewport={{ once: true }}
+                variants={{
+                    animate: {
                         opacity: 1, 
                         x: 0
-                    } : {}
-                }
-                onViewportEnter={handleAnimation}
+                    }
+                }}
                 transition={{ ease: "easeOut", duration: 1 }}
                 >
                     <div>

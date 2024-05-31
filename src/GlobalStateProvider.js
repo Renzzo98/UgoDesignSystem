@@ -7,6 +7,7 @@ const GlobalStateContext = createContext();
 export const GlobalStateProvider = ({ children }) => {
 
   const [activePage, setActivePage] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 1253px)').matches);
 
   const [cardRef] = useState(useRef(null));
@@ -61,7 +62,9 @@ export const GlobalStateProvider = ({ children }) => {
       value={
         { 
           activePage, 
-          setActivePage, 
+          setActivePage,
+          hasAnimated,
+          setHasAnimated,
           isMobile, 
           setIsMobile, 
           cardRef, 
