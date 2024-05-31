@@ -56,7 +56,7 @@
         height: 0rem;
     }
 
-    .content {}
-
-
+    .content {
+        width: 100%;
+    }
 }
