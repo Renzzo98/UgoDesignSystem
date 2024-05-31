@@ -1,0 +1,17 @@
+.ugo-card-demo-container {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .ugo-card-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .ugo-card-title {
+        color: var(--secondary-color);
+    }
+}

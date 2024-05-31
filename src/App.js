@@ -2,7 +2,7 @@ import "./App.css";
 
 import { useEffect, useState } from 'react';
 import { GlobalStateProvider } from "./GlobalStateProvider";
-import PageContainer from "./views/PageContainer/PageContainer";
+import PageContainer from "./app/views/main/PageContainer";
 import MediaQueryListener from "./MediaQueryListener";
 
 function App() {
