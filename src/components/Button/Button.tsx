@@ -9,7 +9,7 @@ interface IconButtonButtonProps {
 }
 
 const Button: FC<IconButtonButtonProps> = ({ contentText, type }) => {
-
+        
     const fileName = "HugoRenzzoResume.pdf";
 
     switch (type){

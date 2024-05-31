@@ -14,3 +14,13 @@ export const explorePage = {
     subHeader: "Welcome to my Design System!",
     
 }
+
+export const componentPage = {
+    navList: [
+        "Card",
+        "Top Bar Navigation",
+        "CounterBox",
+        "Icon Button",
+        "Button",
+    ]
+}

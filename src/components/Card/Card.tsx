@@ -1,8 +1,8 @@
 import './Card.css';
 
 import { FC } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { StyleTypes } from '../../constants/styleTypes';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 interface CardProps {
     title: string;
@@ -14,7 +14,7 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ title, subTitle, type, iconPath, iconSize }) => {
     
-    const MobileView = useMediaQuery({ maxWidth: 1253 });
+    const { isMobile } = useGlobalState();
 
     const renderCardType = () => {
         switch (type) {
@@ -27,7 +27,7 @@ const Card: FC<CardProps> = ({ title, subTitle, type, iconPath, iconSize }) => {
                     }} />
                     <div className='cardTextContent' style={{
                         paddingLeft: iconSize ? `${iconSize/3}rem` : '',
-                        maxWidth: MobileView ? '13rem' : '25rem'
+                        maxWidth: isMobile ? '13rem' : '25rem'
                     }}>
                         <p className={`cardTitle secondaryText`}>{title}</p>
                         <p className={`cardSubTitle secondaryText`}>{subTitle}</p>
@@ -43,7 +43,7 @@ const Card: FC<CardProps> = ({ title, subTitle, type, iconPath, iconSize }) => {
                     }} />
                     <div className='cardTextContent' style={{
                         paddingLeft: iconSize ? `${iconSize/3}rem` : '',
-                        maxWidth: MobileView ? '13rem' : '25rem'
+                        maxWidth: isMobile ? '13rem' : '25rem'
                     }}>
                         <p className={`cardTitle tertiaryText`}>{title}</p>
                         <p className={`cardSubTitle tertiaryText`}>{subTitle}</p>
@@ -59,7 +59,7 @@ const Card: FC<CardProps> = ({ title, subTitle, type, iconPath, iconSize }) => {
                     }} />
                     <div className='cardTextContent' style={{
                         paddingLeft: iconSize ? `${iconSize/3}rem` : '',
-                        maxWidth: MobileView ? '13rem' : '25rem'
+                        maxWidth: isMobile ? '13rem' : '25rem'
                     }}>
                         <p className={`cardTitle primaryText`}>{title}</p>
                         <p className={`cardSubTitle primaryText`}>{subTitle}</p>

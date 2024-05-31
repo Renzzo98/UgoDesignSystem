@@ -1,27 +1,27 @@
 import './topBarNavigation.css';
 
 import { FC, useEffect, useState } from 'react';
-import { navigationBar } from '../../constants/textContent';
 import { useGlobalState } from '../../GlobalStateProvider';
 import IconButton from '../IconButton/IconButton';
 
 import arrowWhite from '../../assets/icons/Arrow_Icon_White.png';
 import { StyleTypes } from '../../constants/styleTypes';
+import { number } from 'prop-types';
 
 
 interface topBarNavigationProps {
     title: string;
     navItems: string[];
     footer: string;
-    isMobile: boolean;
     styleOnScroll: boolean;
-    scrollFuncList: (() => void)[];
+    scrollFuncList?: (() => void)[];
     darkBG: boolean;
 }
 
-const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, isMobile, styleOnScroll, scrollFuncList, darkBG })  => {
+const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, scrollFuncList, styleOnScroll, darkBG })  => {
 
     const { activePage, setActivePage } = useGlobalState();
+    const { isMobile } = useGlobalState();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMenuRendered, setIsMenuRendered] = useState(false);
@@ -43,13 +43,7 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, 
         window.removeEventListener('scroll', handleScroll);
         };
     }, [scrolled]);
-
-    const handlePage = (newPageID: number) => {
-        setActivePage(newPageID);
-        console.log('New Page is ' + activePage);
-    };
-
-
+    
     const toggleMenu = () => {
         if (isMenuOpen) {
             // Start the hide animation
@@ -57,7 +51,7 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, 
             
             // Wait for the animation to finish before removing the menu from the DOM
             setTimeout(() => {
-            setIsMenuRendered(false);
+                setIsMenuRendered(false);
             }, 250); // 500ms is the duration of your CSS transition
         } else {
             // Render the menu and then start the show animation
@@ -69,20 +63,10 @@ const TopBarNavigation: FC<topBarNavigationProps> = ({ title, navItems, footer, 
         }
     };
 
-    const handleScrollFunction = (scrollFunc: () => void) => {
-        scrollFunc();
-        toggleMenu();
-        setTimeout(() => {
-            const currentScrollPosition = window.scrollY;
-            const offsetPosition = currentScrollPosition - 250;
-            
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }, 600); // The timeout duration might need adjustment
-    }
-
+    const handlePage = (newPageID: number) => {
+        setActivePage(newPageID);
+        console.log('New Page is ' + activePage);
+    };
     
     const stackedTopBar = () => {
         return (

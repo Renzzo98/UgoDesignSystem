@@ -2,17 +2,18 @@ import "./HomeContent.css";
 
 import { FC } from "react";
 import { explorePage } from "../../constants";
+import { motion } from 'framer-motion';
+import { StyleTypes } from "../../constants/styleTypes";
+import { useGlobalState } from "../../GlobalStateProvider";
 import IconButton from "../../components/IconButton/IconButton";
 
 import mouseWhiteSolid from "../../assets/icons/Mouse_Icon_White_Solid.png";
-import { motion } from 'framer-motion';
-import { StyleTypes } from "../../constants/styleTypes";
 
-interface HomeContentProps {
-    isMobile: boolean;
-}
+interface HomeContentProps {}
 
-const HomeContent: FC<HomeContentProps> = ({ isMobile }) => {
+const HomeContent: FC<HomeContentProps> = () => {
+
+    const { isMobile } = useGlobalState();
 
     return (
         <div className={`home-page-container ${isMobile ? 'mobile-view' : ''}`}>

@@ -2,17 +2,18 @@ import './CardDemo.css';
 
 import { FC } from 'react';
 import { StyleTypes } from '../../constants/styleTypes';
+import { useGlobalState } from '../../GlobalStateProvider';
 import Card from '../../components/Card/Card';
 
 import mouseIconWhite from "../../assets/icons/Mouse_Icon_White.png";
 import mouseIconBlack from "../../assets/icons/Mouse_Icon_Black.png";
 
 
-interface CardDemoProps {
-    isMobile: boolean;
-}
+interface CardDemoProps {}
 
-const CardDemo: FC<CardDemoProps> = ({ isMobile }) => {
+const CardDemo: FC<CardDemoProps> = () => {
+
+    const { isMobile } = useGlobalState();
 
     return(
         <div className='cardDemoContainer'>
