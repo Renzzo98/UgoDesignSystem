@@ -13,10 +13,7 @@ const SideNavLayout: FC<SideNavLayoutProps> = ({ header, navItems, childComponen
 
     const { isMobile, scrollRefFunction } = useGlobalState();
 
-    console.log(scrollRefFunction);
-
     const handleScrollFunction = (scrollFunc: () => void) => {
-        console.log(scrollFunc);
         scrollFunc();
         setTimeout(() => {
             const currentScrollPosition = window.scrollY;

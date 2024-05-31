@@ -20,6 +20,13 @@ const HomeContent: FC<HomeContentProps> = () => {
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
                 initial={{ opacity: 0, x: -200  }}
+                whileInView="animate"
+                variants={{
+                    animate: {
+                        opacity: 1, 
+                        x: 0
+                    }
+                }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ ease: "easeOut", duration: 1 }}
                 >
