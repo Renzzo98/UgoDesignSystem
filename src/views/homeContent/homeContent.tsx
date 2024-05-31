@@ -29,7 +29,7 @@ const HomeContent: FC<HomeContentProps> = () => {
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
                 initial={{ opacity: 0, x: -200  }}
-                animate={ hasAnimated ?
+                animate={ !isMobile ?
                     {
                         opacity: 1, 
                         x: 0
@@ -50,6 +50,7 @@ const HomeContent: FC<HomeContentProps> = () => {
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView="animate"
+                            viewport={{ once: true }}
                             transition={{
                                 duration: 2,
                                 ease: "backOut",
