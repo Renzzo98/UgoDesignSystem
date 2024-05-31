@@ -31,7 +31,7 @@
 
     .sideNav.mobile {
         width: 120%;
-        height: 3rem;
+        height: 100%;
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
