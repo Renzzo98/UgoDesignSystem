@@ -19,6 +19,7 @@ const HomeContent: FC<HomeContentProps> = () => {
     // Function to handle the animation
     const handleAnimation = () => {
         if (!hasAnimated) {
+            console.log('animation started');
             setHasAnimated(true);
         }
     };
@@ -74,6 +75,7 @@ const HomeContent: FC<HomeContentProps> = () => {
                     <p >Scroll down for more</p>
                 </div>
             </div>
+            <p style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: '2rem'}}>{explorePage.verNo}</p>
         </div>
     );
 };
