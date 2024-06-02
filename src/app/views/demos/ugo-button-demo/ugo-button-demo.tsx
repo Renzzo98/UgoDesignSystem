@@ -1,7 +1,7 @@
 import './ugo-button-demo.css';
 
 import { FC } from 'react';
-import { StyleTypes } from '../../../models/constants/styleTypes';
+import { StyleTypes } from '../../../models/constants/style-types';
 import { motion } from 'framer-motion';
 import Button from '../../../components/ugo-button/ugo-button';
 import { useGlobalState } from '../../../../GlobalStateProvider';

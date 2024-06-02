@@ -1,4 +1,5 @@
 import "./ugo-section.css";
+
 import { FC } from "react";
 
 interface UgoSectionProps {

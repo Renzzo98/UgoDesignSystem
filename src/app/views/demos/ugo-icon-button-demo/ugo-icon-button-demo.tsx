@@ -1,7 +1,7 @@
 import './ugo-icon-button-demo.css';
 
 import { FC } from 'react';
-import { StyleTypes } from '../../../models/constants/styleTypes';
+import { StyleTypes } from '../../../models/constants/style-types';
 import { motion } from 'framer-motion';
 import { useGlobalState } from '../../../../GlobalStateProvider';
 import IconButton from '../../../components/ugo-icon-button/ugo-icon-button';

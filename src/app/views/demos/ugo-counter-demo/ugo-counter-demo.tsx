@@ -1,7 +1,7 @@
 import './ugo-counter-demo.css';
 
 import { FC } from 'react';
-import { StyleTypes } from '../../../models/constants/styleTypes';
+import { StyleTypes } from '../../../models/constants/style-types';
 import CounterBox from '../../../components/ugo-counter-box/ugo-counter-box';
 import { useGlobalState } from '../../../../GlobalStateProvider';
 

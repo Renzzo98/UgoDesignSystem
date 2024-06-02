@@ -2,7 +2,7 @@ import "./PageContainer.css";
 
 import { FC } from "react";
 import { useGlobalState } from "../../../GlobalStateProvider";
-import { navigationBar } from '../../models/constants/textContent';
+import { navigationBar } from '../../models/constants/text-content';
 
 import TopBarNavigation from "../../components/ugo-nav-bar/ugo-nav-bar";
 import HomeContent from "../contents/HomeContent/HomeContent";

@@ -1,7 +1,7 @@
 import './ugo-card-demo.css';
 
 import { FC } from 'react';
-import { StyleTypes } from '../../../models/constants/styleTypes';
+import { StyleTypes } from '../../../models/constants/style-types';
 import { useGlobalState } from '../../../../GlobalStateProvider';
 import Card from '../../../components/ugo-card/ugo-card';
 

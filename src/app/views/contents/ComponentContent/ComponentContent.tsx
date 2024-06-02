@@ -8,6 +8,7 @@ import CardDemo from "../../demos/ugo-card-demo/ugo-card-demo";
 import CounterDemo from "../../demos/ugo-counter-demo/ugo-counter-demo";
 import IconButtonDemo from "../../demos/ugo-icon-button-demo/ugo-icon-button-demo";
 import ButtonDemo from "../../demos/ugo-button-demo/ugo-button-demo";
+import { componentPage } from "../../../models/constants";
 
 
 interface ComponentContentProps {}
@@ -18,34 +19,34 @@ const ComponentContent: FC<ComponentContentProps> = () => {
 
     return (
         <div className="component-page-container">
-            <Section header="Card" darkBackground={true} 
+            <Section header={componentPage.componentHeader.UgoCard} darkBackground={true} 
                 childComponent={
                     <div ref={cardRef}>
                         <CardDemo/>
                     </div>
                 } 
             />
-            <Section header="Top Bar Navigation" darkBackground={true} 
+            <Section header={componentPage.componentHeader.UgoNavBar} darkBackground={true} 
                 childComponent={
                     <div ref={topBarNavRef} style={{ width: '100%' }}>
                         <TopBarNavigation title="Title" navItems={["Link 1", "Link 2"]} footer="Action Link" styleOnScroll={false} darkBG={true} />
                     </div>
                 } 
             />
-            <Section header="CounterBox" darkBackground={true} 
+            <Section header={componentPage.componentHeader.UgoCounterBox} darkBackground={true} 
                 childComponent={
                     <div ref={counterBoxRef}>
                         <CounterDemo/>
                     </div>
                 } 
             />
-            <Section header="Icon Button" darkBackground={true} childComponent={
+            <Section header={componentPage.componentHeader.UgoIconButton} darkBackground={true} childComponent={
                     <div ref={iconButtonRef}>
                         <IconButtonDemo/>
                     </div>
                 } 
             />
-            <Section header="Button" darkBackground={true} 
+            <Section header={componentPage.componentHeader.UgoButton} darkBackground={true} 
                 childComponent={
                     <div ref={buttonRef}>
                         <ButtonDemo/>

@@ -1,6 +1,6 @@
 import "./ugo-icon-button.css";
 
-import { StyleTypes } from "../../models/constants/styleTypes";
+import { StyleTypes } from "../../models/constants/style-types";
 
 import { FC } from "react";
 interface UgoIconButtonProps {

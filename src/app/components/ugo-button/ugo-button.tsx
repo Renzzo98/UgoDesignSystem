@@ -1,7 +1,7 @@
 import './ugo-button.css';
 
 import { FC } from 'react';
-import { StyleTypes } from '../../models/constants/styleTypes';
+import { StyleTypes } from '../../models/constants/style-types';
 
 interface UgoButtonProps {
     contentText: string;

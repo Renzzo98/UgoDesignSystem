@@ -2,8 +2,8 @@ import './ugo-counter-box.css';
 
 import { FC, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { StyleTypes } from '../../models/constants/style-types';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { StyleTypes } from '../../models/constants/styleTypes';
 
 
 interface UgoCounterBoxProps {

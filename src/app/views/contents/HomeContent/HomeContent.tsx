@@ -3,7 +3,7 @@ import "./HomeContent.css";
 import { FC } from "react";
 import { explorePage } from "../../../models/constants";
 import { motion } from 'framer-motion';
-import { StyleTypes } from "../../../models/constants/styleTypes";
+import { StyleTypes } from "../../../models/constants/style-types";
 import { useGlobalState } from "../../../../GlobalStateProvider";
 import IconButton from "../../../components/ugo-icon-button/ugo-icon-button";
 

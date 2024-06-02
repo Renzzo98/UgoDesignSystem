@@ -20,5 +20,12 @@ export const componentPage = {
         "Ugo Counter Box",
         "Ugo Icon Button",
         "Ugo Button"
-    ]
+    ],
+    componentHeader: {
+        UgoCard: 'ugo-card',
+        UgoNavBar: 'ugo-nav-bar',
+        UgoCounterBox: 'ugo-counter-box',
+        UgoIconButton: 'ugo-icon-button',
+        UgoButton: 'ugo-button'
+    }
 }
