@@ -1,4 +1,4 @@
-import "./HomeContent.css";
+import "./home-page.css";
 
 import { FC } from "react";
 import { explorePage } from "../../../models/constants";
@@ -9,9 +9,9 @@ import IconButton from "../../../components/ugo-icon-button/ugo-icon-button";
 
 import mouseWhiteSolid from "../../../../assets/icons/Mouse_Icon_White_Solid.png";
 
-interface HomeContentProps {}
+interface HomePageProps {}
 
-const HomeContent: FC<HomeContentProps> = () => {
+const HomePage: FC<HomePageProps> = () => {
 
     const { isMobile } = useGlobalState();
 
@@ -71,4 +71,4 @@ const HomeContent: FC<HomeContentProps> = () => {
     );
 };
 
-export default HomeContent;
+export default HomePage;

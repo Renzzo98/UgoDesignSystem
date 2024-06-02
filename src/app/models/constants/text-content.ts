@@ -2,6 +2,7 @@ export const navigationBar = {
     title: "Ugo Design System",
     navList: [
         "Explore",
+        "Layout",
         "Components"
     ],
     footer: 'Try it Today'
