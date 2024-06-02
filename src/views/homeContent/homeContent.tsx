@@ -2,24 +2,32 @@ import "./HomeContent.css";
 
 import { FC } from "react";
 import { explorePage } from "../../constants";
+import { motion } from 'framer-motion';
+import { StyleTypes } from "../../constants/styleTypes";
+import { useGlobalState } from "../../GlobalStateProvider";
 import IconButton from "../../components/IconButton/IconButton";
 
 import mouseWhiteSolid from "../../assets/icons/Mouse_Icon_White_Solid.png";
-import { motion } from 'framer-motion';
-import { StyleTypes } from "../../constants/styleTypes";
 
-interface HomeContentProps {
-    isMobile: boolean;
-}
+interface HomeContentProps {}
 
-const HomeContent: FC<HomeContentProps> = ({ isMobile }) => {
+const HomeContent: FC<HomeContentProps> = () => {
+
+    const { isMobile } = useGlobalState();
 
     return (
         <div className={`home-page-container ${isMobile ? 'mobile-view' : ''}`}>
             <p className="sub-header">{explorePage.subHeader}</p>
             <motion.div
-                initial={{ opacity: 0, x: -200  }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={isMobile ? { opacity: 1 } : { opacity: 0, x: -200  }}
+                whileInView={isMobile ? {} : "animate"}
+                viewport={{ once: true }}
+                variants={{
+                    animate: {
+                        opacity: 1, 
+                        x: 0
+                    }
+                }}
                 transition={{ ease: "easeOut", duration: 1 }}
                 >
                     <div>
@@ -34,6 +42,7 @@ const HomeContent: FC<HomeContentProps> = ({ isMobile }) => {
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView="animate"
+                            viewport={{ once: true }}
                             transition={{
                                 duration: 2,
                                 ease: "backOut",
@@ -57,6 +66,7 @@ const HomeContent: FC<HomeContentProps> = ({ isMobile }) => {
                     <p >Scroll down for more</p>
                 </div>
             </div>
+            <p style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: '2rem'}}>{explorePage.verNo}</p>
         </div>
     );
 };

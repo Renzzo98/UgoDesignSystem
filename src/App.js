@@ -2,12 +2,10 @@ import "./App.css";
 
 import { useEffect, useState } from 'react';
 import { GlobalStateProvider } from "./GlobalStateProvider";
-import { useMediaQuery } from 'react-responsive';
 import PageContainer from "./views/PageContainer/PageContainer";
+import MediaQueryListener from "./MediaQueryListener";
 
 function App() {
-
-  const MobileView = useMediaQuery({ maxWidth: 1253 });
 
   const [height, setHeight] = useState(window.innerHeight);
 
@@ -27,10 +25,11 @@ function App() {
   
   return (
     <GlobalStateProvider>
+      <MediaQueryListener />
       <div className="body" style={{
         minHeight: height + 300
       }}>
-        <PageContainer isMobile={MobileView} />
+        <PageContainer/>
       </div>
     </GlobalStateProvider>
   );

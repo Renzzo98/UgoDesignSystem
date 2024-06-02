@@ -3,17 +3,17 @@ import './IconButtonDemo.css';
 import { FC } from 'react';
 import { StyleTypes } from '../../constants/styleTypes';
 import { motion } from 'framer-motion';
+import { useGlobalState } from '../../GlobalStateProvider';
 import IconButton from '../../components/IconButton/IconButton';
 
 import mouseIcon from "../../assets/icons/Mouse_Icon_White.png";
 
 
-interface IconButtonDemoProps {
-    isMobile: boolean;
-}
+interface IconButtonDemoProps {}
 
-const IconButtonDemo: FC<IconButtonDemoProps> = ({ isMobile }) => {
+const IconButtonDemo: FC<IconButtonDemoProps> = () => {
 
+    const { isMobile } = useGlobalState();
 
     return(
         <div className='iconButtonDemoContainer' style={{ alignItems: isMobile? "center" : "flex-start"}}>
@@ -21,8 +21,8 @@ const IconButtonDemo: FC<IconButtonDemoProps> = ({ isMobile }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView="animate"
+                    viewport={{ once: true }}
                     transition ={{
-                        delay: 1,
                         duration: 2,
                         ease: "backOut",
                         times: [0, 0.2, 0.5, 0.8, 1],
@@ -47,8 +47,8 @@ const IconButtonDemo: FC<IconButtonDemoProps> = ({ isMobile }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView="animate"
+                    viewport={{ once: true }}
                     transition ={{
-                        delay: 1,
                         duration: 2,
                         ease: "backOut",
                         times: [0, 0.2, 0.5, 0.8, 1],
@@ -73,8 +73,8 @@ const IconButtonDemo: FC<IconButtonDemoProps> = ({ isMobile }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView="animate"
+                    viewport={{ once: true }}
                     transition ={{
-                        delay: 1,
                         duration: 2,
                         ease: "backOut",
                         times: [0, 0.2, 0.5, 0.8, 1],

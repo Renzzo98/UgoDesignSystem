@@ -1,5 +1,3 @@
-// Need to replace this with an API
-
 export const navigationBar = {
     title: "Ugo Design System",
     navList: [
@@ -10,7 +8,18 @@ export const navigationBar = {
 }
 
 export const explorePage = {
-    header: "Created by an single developer from NY.\n Want to create something that's clean and simple",
+    header: "Created By A Single Developer From NY. Wanted To Create Something Clean And Simple.",
     subHeader: "Welcome to my Design System!",
+    verNo: 'Ver: 0.1.12'
     
+}
+
+export const componentPage = {
+    navList: [
+        "Card",
+        "Top Bar Navigation",
+        "CounterBox",
+        "Icon Button",
+        "Button",
+    ]
 }

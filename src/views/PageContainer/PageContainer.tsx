@@ -5,47 +5,39 @@ import { useGlobalState } from "../../GlobalStateProvider";
 import { navigationBar } from '../../constants/textContent';
 
 import TopBarNavigation from "../../components/TopBarNavigation/topBarNavigation";
-import ComponentPage from "../ComponentContent/ComponentContent";
 import HomeContent from "../HomeContent/HomeContent";
+import ComponentPage from "../ComponentPage/ComponentPage";
 
-interface PageContainerProps {
-  isMobile: boolean
-}
+interface PageContainerProps {}
 
-const PageContainer: FC<PageContainerProps> = ({ isMobile }) => {
+const PageContainer: FC<PageContainerProps> = () => {
 
   const { activePage } = useGlobalState();
 
-  interface PageHandlerProps {
-    mobileView: boolean;
-}
+  interface PageHandlerProps {}
 
-  const PageHandler: FC<PageHandlerProps> = ({ mobileView }) => {
+  const PageHandler: FC<PageHandlerProps> = () => {
     switch (activePage){
       case 1:
         return (
-          <ComponentPage isMobile={mobileView} />
-        )
+          <ComponentPage />
+      )
+      case 2:
+        return (
+          <ComponentPage />
+      )
       default:
         return (
-          <HomeContent isMobile={mobileView} />
-        )
+          <HomeContent />
+      )
     }
-};
-
-  const scrollToContactSection = () => {
-      window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'smooth'
-      })
   };
 
-  const scrollFunctions = [scrollToContactSection];
 
   return (
     <div>
-      <TopBarNavigation title={navigationBar.title} navItems={navigationBar.navList} footer={navigationBar.footer} isMobile={isMobile} styleOnScroll={false} darkBG={true} scrollFuncList={scrollFunctions}/>
-      <PageHandler mobileView={isMobile}/>
+      <TopBarNavigation title={navigationBar.title} navItems={navigationBar.navList} footer={navigationBar.footer} styleOnScroll={false} darkBG={true}/>
+      <PageHandler />
     </div>
   );
 };

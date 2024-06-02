@@ -3,13 +3,14 @@ import './CounterDemo.css';
 import { FC } from 'react';
 import { StyleTypes } from '../../constants/styleTypes';
 import CounterBox from '../../components/CounterBox/CounterBox';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 
-interface CounterDemoProps {
-    isMobile: boolean;
-}
+interface CounterDemoProps {}
 
-const CounterDemo: FC<CounterDemoProps> = ({ isMobile }) => {
+const CounterDemo: FC<CounterDemoProps> = () => {
+
+    const { isMobile } = useGlobalState();
 
     return(
         <div className='counterDemoContainer' style={{ alignItems: isMobile? 'center' : 'flex-start'}}>

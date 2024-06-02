@@ -4,13 +4,14 @@ import { FC } from 'react';
 import { StyleTypes } from '../../constants/styleTypes';
 import { motion } from 'framer-motion';
 import Button from '../../components/Button/Button';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 
-interface ButtonDemoProps {
-    isMobile: boolean;
-}
+interface ButtonDemoProps {}
 
-const ButtonDemo: FC<ButtonDemoProps> = ({ isMobile }) => {
+const ButtonDemo: FC<ButtonDemoProps> = () => {
+
+    const { isMobile } = useGlobalState();
 
     return(
         <div className='buttonDemoContainer' style={{ alignItems: isMobile? "center" : "flex-start"}}>
@@ -18,6 +19,7 @@ const ButtonDemo: FC<ButtonDemoProps> = ({ isMobile }) => {
                 <motion.div
                         initial={{ opacity: 1 }}
                         whileInView="animate"
+                        viewport={{ once: true }}
                         transition ={{
                             type: "spring",
                             bounce: 0.5,
@@ -43,6 +45,7 @@ const ButtonDemo: FC<ButtonDemoProps> = ({ isMobile }) => {
             <motion.div
                         initial={{ opacity: 1 }}
                         whileInView="animate"
+                        viewport={{ once: true }}
                         transition ={{
                             type: "spring",
                             bounce: 0.5,
@@ -68,6 +71,7 @@ const ButtonDemo: FC<ButtonDemoProps> = ({ isMobile }) => {
             <motion.div
                         initial={{ opacity: 1 }}
                         whileInView="animate"
+                        viewport={{ once: true }}
                         transition ={{
                             type: "spring",
                             bounce: 0.5,

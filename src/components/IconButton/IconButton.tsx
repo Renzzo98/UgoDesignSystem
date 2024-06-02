@@ -24,9 +24,7 @@ const IconButton: FC<IconButtonButtonProps> = ({
   //const { activePage, setActivePage } = useGlobalState();
 
   function setPageID(pageID: number, scrollFunc: () => void): void {
-    // setActivePage(pageID);
     scrollFunc();
-    // console.log('Current Page is ' + activePage);
   }
 
   function openLink(link: string) {
