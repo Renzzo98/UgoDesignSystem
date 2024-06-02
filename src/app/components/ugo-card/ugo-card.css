@@ -1,0 +1,56 @@
+.ugo-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    width: max-content;
+    margin-top: 1rem;
+    padding: 2rem 3rem 2rem 1.5rem;
+    border-radius: 2rem;
+    z-index: 2;
+    
+    .ugo-card-text-content {
+        max-width: 200px; /* Set the maximum width */
+        word-wrap: break-word; /* Wrap words when they exceed the max-width */
+        white-space: normal; 
+
+        .ugo-card-title {
+            font-size: 1.8rem;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            margin: 18px 0px;
+        }
+        
+        .ugo-card-sub-title {
+            font-size: 0.8rem;
+            font-optical-sizing: auto;
+            font-weight: 500;
+        }
+        
+        .primary-text {
+            color: var(--secondary-color);;
+        }
+        
+        .secondary-text {
+            color: var(--primary-color);;
+        }
+        
+        .tertiary-text {
+            color: var(--secondary-color);;
+        }
+    }
+    
+
+}    
+
+.primary-card {
+    background-color: var(--primary-color);;
+}
+
+.secondary-card {
+    background-color: var(--secondary-color);
+}
+
+.tertiary-card {
+    border: 0.2rem solid var(--secondary-color);
+}

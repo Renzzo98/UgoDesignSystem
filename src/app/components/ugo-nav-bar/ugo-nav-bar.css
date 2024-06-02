@@ -1,0 +1,129 @@
+.ugo-nav-stacked-bar {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 5;
+
+    .ugo-nav-stacked-bar.scrolled {
+        background-color: var(--primary-color); /* New background color when scrolled */
+    }
+
+    .ugo-nav-bar {
+        color: var(--secondary-color);
+        padding: 10px;
+    }
+
+    .ugo-menu-button {
+        position: relative;
+        width: 100%;
+        padding: 12px;
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+
+    .ugo-menu-button.scrolled {
+        padding: 12px;
+        cursor: pointer;
+        color: var(--secondary-color);
+    }
+      
+    .ugo-menu-icon {
+        cursor: pointer;
+        position: absolute;
+        font-size: 30px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease-out;
+    }
+
+    .ugo-nav-menu-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translateY(-100%); /* Start off-screen */
+        opacity: 0; /* Start as invisible */
+        visibility: hidden; /* instead of display: none; */
+        transition: visibility 0s linear 0.5s, opacity 0.5s ease, transform 0.5s ease; /* Add visibility to transition */
+    }
+
+    .ugo-nav-menu-container.show {
+        transform: translateY(0); /* Bring into view */
+        opacity: 1; /* Make fully visible */
+        visibility: visible; /* instead of display: block; */
+        transition: visibility 0s linear 0s, opacity 0.5s ease, transform 0.5s ease; /* Add visibility to transition */
+    }
+
+    .ugo-nav-menu-container.hide {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .ugo-menu-list {
+        color: black;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+
+        li {
+            cursor: pointer;
+            padding: 10px;
+            font-size: 1.7rem;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal; 
+        }
+        
+        li:hover {
+            color: var(--modern-primary-color);
+            font-size: 2rem;
+        }
+    }
+
+    .ugo-menu-list.scrolled {
+        color: var(--secondary-color);
+    }
+
+}
+
+.ugo-nav-bar {
+    padding: 2rem 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 5;
+
+    .ugo-nav-title-container {}
+
+    .ugo-nav-item-container {
+        display: flex;
+        gap: 5rem;
+        justify-content: space-evenly;
+    }
+
+    .ugo-nav-item {
+        cursor: pointer;
+        color: black
+    }
+
+    .ugo-nav-footer-container {}
+
+}
+
+/* Show class to smoothly transition in */
+.show {
+    opacity: 1;
+}
+
+/* Hide class to smoothly transition out */
+.hide {
+    opacity: 0 !important; /* Add !important to ensure override */
+}

@@ -1,0 +1,9 @@
+.layout-page-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        color: white;
+    }
+}
